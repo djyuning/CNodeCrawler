@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #444;
+    font-size: 14px;
+    font-family: Helvetica Neue, PingFang SC, Helvetica, Arial, Hiragino Sans GB, Microsoft Yahei, STHeiti, sans-serif;
+    line-height: 28px;
+}
+
+.header-wrap {
+	background-color: white;
+	border-bottom: 1px #eee solid;
+}
+
+.header {
+	padding: 20px;
+}
+
+.body {
+	padding: 20px;
+}
+
+.footer {
+	font-size: 12px;
+	padding: 20px;
+}
