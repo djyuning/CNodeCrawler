@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/djyuning/CNodeCrawler/issues"
   },
-  "homepage": "https://github.com/djyuning/CNodeCrawler#readme"
+  "homepage": "https://github.com/djyuning/CNodeCrawler#readme",
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "iconv-lite": "^0.4.23"
+  },
+  "dependencies": {
+    "http": "^0.0.0",
+    "https": "^1.0.0"
+  }
 }
