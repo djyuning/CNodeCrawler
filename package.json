@@ -1,0 +1,19 @@
+{
+  "name": "cnode-crawler",
+  "version": "1.0.0",
+  "description": "NodeJs 爬虫学习",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djyuning/CNodeCrawler.git"
+  },
+  "author": "djyuning <djyuning@126.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/djyuning/CNodeCrawler/issues"
+  },
+  "homepage": "https://github.com/djyuning/CNodeCrawler#readme"
+}
