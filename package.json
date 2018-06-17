@@ -2,9 +2,8 @@
   "name": "cnode-crawler",
   "version": "1.0.0",
   "description": "NodeJs 爬虫学习",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,10 +17,14 @@
   "homepage": "https://github.com/djyuning/CNodeCrawler#readme",
   "devDependencies": {
     "cheerio": "^1.0.0-rc.2",
-    "iconv-lite": "^0.4.23"
+    "iconv-lite": "^0.4.23",
+    "koa-ejs": "^4.1.1"
   },
   "dependencies": {
     "http": "^0.0.0",
-    "https": "^1.0.0"
+    "https": "^1.0.0",
+    "koa": "^2.5.1",
+    "koa-route": "^3.2.0",
+    "koa-static": "^4.0.3"
   }
 }
