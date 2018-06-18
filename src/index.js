@@ -1,67 +1,30 @@
+const config = require('./config/common');
 const path = require('path');
 const Koa = require('koa');
-const route = require('koa-route');
 const koaBody = require('koa-body');
 const static = require('koa-static');
 const render = require('koa-ejs');
 
-const Crawler = require('./lib/crawler');
+const router = require('./router/index');
 
 const app = new Koa();
 
 app.use(koaBody());
 
 render(app, {
-  root: path.join(__dirname, 'view'),
-  layout: 'Layout/main',
-  viewExt: 'html',
-  cache: false,
-  debug: false,
+  root: './src/view', // 视图文件所在目录
+  layout: 'Layout/main', // 默认布局文件
+  viewExt: 'html', // 模板文件格式
+  cache: false, // 启用模板缓存
+  debug: false, // 启用 DEBUG
 });
 
 // 处理静态资源
 app.use(static(path.join(__dirname, '/static')));
 
-// 首页
-app.use(route.all('/', async ctx => {
-    let titles = [];
+// 路由初始化
+app.use(router.routes(), router.allowedMethods());
 
-    ctx.state = {
-      titles,
-    };
-
-    if (ctx.request.method === 'POST') {
-      let params = ctx.request.body;
-      let url = params.url;
-      let $ = await Crawler.getHttp(url);
-
-      $('#topic_list .topic_title').each(function (idx, element) {
-        let $element = $(element);
-
-        // 获取标题
-        let title = $element.text();
-        title = title.replace(/(\s+){3,}/g, '');
-        title = title.replace(/(\\n|\\r|\\t)}/g, '');
-
-        // 获取连接地址
-        let href = url + $element.attr('href').substr(1);
-
-        titles.push({
-          title,
-          href,
-        });
-
-        ctx.state = {
-          titles,
-        };
-
-      });
-    }
-
-    await ctx.render('Index/index');
-  }
-));
-
-app.listen(3000, () => {
-  console.log('server is starting at port 3000');
+app.listen(config.port, () => {
+  console.log('服务启用成功 http://localhost:3000');
 });

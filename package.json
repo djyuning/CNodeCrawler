@@ -18,14 +18,14 @@
   "devDependencies": {
     "cheerio": "^1.0.0-rc.2",
     "iconv-lite": "^0.4.23",
-    "koa-ejs": "^4.1.1"
+    "koa-ejs": "^4.1.1",
+    "koa-router": "^7.4.0"
   },
   "dependencies": {
     "http": "^0.0.0",
     "https": "^1.0.0",
     "koa": "^2.5.1",
     "koa-body": "^4.0.3",
-    "koa-route": "^3.2.0",
     "koa-static": "^4.0.3"
   }
 }
